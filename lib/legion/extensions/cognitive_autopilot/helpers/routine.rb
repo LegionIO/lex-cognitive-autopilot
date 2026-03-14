@@ -60,17 +60,17 @@ module Legion
 
           def to_h
             {
-              id:               @id,
-              pattern:          @pattern,
-              domain:           @domain,
-              familiarity:      @familiarity,
+              id:                @id,
+              pattern:           @pattern,
+              domain:            @domain,
+              familiarity:       @familiarity,
               familiarity_label: familiarity_label,
-              autopilot_ready:  autopilot_ready?,
-              novel:            novel?,
-              execution_count:  @execution_count,
-              success_rate:     success_rate,
-              created_at:       @created_at,
-              last_executed_at: @last_executed_at
+              autopilot_ready:   autopilot_ready?,
+              novel:             novel?,
+              execution_count:   @execution_count,
+              success_rate:      success_rate,
+              created_at:        @created_at,
+              last_executed_at:  @last_executed_at
             }
           end
 

@@ -88,26 +88,26 @@ module Legion
 
           def autopilot_report
             {
-              current_mode:      @current_mode,
-              energy:            @energy,
-              energy_label:      energy_label,
-              exhausted:         exhausted?,
-              total_routines:    @routines.size,
-              autopilot_ready:   autopilot_routines.size,
-              novel_count:       novel_routines.size,
-              autopilot_ratio:   autopilot_ratio,
-              mode_label:        mode_label,
-              total_events:      @events.size,
-              override_count:    override_count,
-              most_familiar:     most_familiar(limit: 3).map(&:to_h)
+              current_mode:    @current_mode,
+              energy:          @energy,
+              energy_label:    energy_label,
+              exhausted:       exhausted?,
+              total_routines:  @routines.size,
+              autopilot_ready: autopilot_routines.size,
+              novel_count:     novel_routines.size,
+              autopilot_ratio: autopilot_ratio,
+              mode_label:      mode_label,
+              total_events:    @events.size,
+              override_count:  override_count,
+              most_familiar:   most_familiar(limit: 3).map(&:to_h)
             }
           end
 
           def to_h
             {
-              current_mode:   @current_mode,
-              energy:         @energy,
-              total_routines: @routines.size,
+              current_mode:    @current_mode,
+              energy:          @energy,
+              total_routines:  @routines.size,
               autopilot_ratio: autopilot_ratio
             }
           end
@@ -120,7 +120,8 @@ module Legion
               @current_mode = :autopilot
             elsif routine.novel? && @current_mode == :autopilot
               drain_energy!(OVERRIDE_COST)
-              record_event(from: :autopilot, to: :deliberate, trigger: "routine_novel:#{routine.pattern}", cost: OVERRIDE_COST)
+              record_event(from: :autopilot, to: :deliberate, trigger: "routine_novel:#{routine.pattern}",
+                           cost: OVERRIDE_COST)
               @current_mode = :deliberate
             end
           end

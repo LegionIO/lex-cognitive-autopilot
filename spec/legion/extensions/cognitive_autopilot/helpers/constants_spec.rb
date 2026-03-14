@@ -24,8 +24,8 @@ RSpec.describe Legion::Extensions::CognitiveAutopilot::Helpers::Constants do
   end
 
   describe 'TASK_DOMAINS' do
-    it 'has 7 domains' do
-      expect(described_class::TASK_DOMAINS.size).to eq(7)
+    it 'has 8 domains' do
+      expect(described_class::TASK_DOMAINS.size).to eq(8)
     end
   end
 
